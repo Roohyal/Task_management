@@ -16,4 +16,6 @@ public interface PersonService {
     String resetPassword(ResetPasswordRequestDto resetpassword);
 
     UpdatePersonResponse updatePersonDetails(UpdatePersonRequest updatePersonRequest, String email) throws Exception;
+
+    UserDetailsDto getPersonDetails(String email) throws Exception;
 }

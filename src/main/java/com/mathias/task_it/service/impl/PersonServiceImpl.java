@@ -217,4 +217,15 @@ public class PersonServiceImpl implements PersonService {
                 .build();
     }
 
+    @Override
+    public UserDetailsDto getPersonDetails(String email) throws Exception {
+        Person person =  personRepository.findByEmail(email).orElseThrow(()-> new NotFoundException("User not found"));
+
+        return UserDetailsDto.builder()
+                .firstName(person.getFirstName())
+                .lastName(person.getLastName())
+                .email(person.getEmail())
+                .build();
+    }
+
 }
