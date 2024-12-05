@@ -85,8 +85,8 @@ Fields:
 
 
 ### 3. Configure your environmental Variables
- * Put in your postgres name and Password
- * Put in your preferred Email and Password
+ * Put in your postgresSQL name and Password
+ * Put in your preferred Email and App Password
 
 ### 4.  Run the Application:
 
