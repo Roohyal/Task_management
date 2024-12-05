@@ -83,11 +83,16 @@ Fields:
 
 `mvn clean install`
 
-### 3.  Run the Application:
+
+### 3. Configure your environmental Variables
+ * Put in your postgres name and Password
+ * Put in your preferred Email and Password
+
+### 4.  Run the Application:
 
 `mvn spring-boot:run`
 
-### 4.  Access the API Documentation:
+### 5.  Access the API Documentation:
 
 * Once the server is running, go to http://localhost:8080/swagger-ui.html to view and test the API endpoints.
 
