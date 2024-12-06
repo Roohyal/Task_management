@@ -18,4 +18,5 @@ public interface PersonService {
     UpdatePersonResponse updatePersonDetails(UpdatePersonRequest updatePersonRequest, String email) throws Exception;
 
     UserDetailsDto getPersonDetails(String email) throws Exception;
+
 }

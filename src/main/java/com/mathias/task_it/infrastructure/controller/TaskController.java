@@ -116,5 +116,11 @@ public class TaskController {
         String currentUsername = authentication.getName();
         return ResponseEntity.ok(taskService.assignTask(taskId,categoryId,currentUsername));
     }
+    @GetMapping("/get-task-details")
+    public ResponseEntity<?> getTaskDetails(@RequestParam Long taskId){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+        return ResponseEntity.ok(taskService.getTaskDetails(taskId,currentUsername));
+    }
 
 }

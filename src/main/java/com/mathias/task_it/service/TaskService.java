@@ -33,4 +33,7 @@ public interface TaskService {
     void deleteTask(Long taskId, String email);
 
     Task assignTask(Long taskId, Long categoryId, String email);
+
+    TaskListResponse getTaskDetails(Long taskId, String email);
+
 }

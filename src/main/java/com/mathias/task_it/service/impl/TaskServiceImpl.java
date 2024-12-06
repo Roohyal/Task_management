@@ -224,6 +224,24 @@ public class TaskServiceImpl implements TaskService {
 
     }
 
+    @Override
+    public TaskListResponse getTaskDetails(Long taskId, String email) {
+        personRepository.findByEmail(email).orElseThrow(()-> new NotFoundException("User not found"));
+        Task task =  taskRepository.findById(taskId)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+
+        TaskListResponse response = TaskListResponse.builder()
+                .id(task.getId())
+                .taskName(task.getTaskName())
+                .taskDescription(task.getTaskDescription())
+                .taskStatus(task.getStatus())
+                .priority(task.getPriority())
+                .deadline(task.getDeadline())
+                .build();
+
+        return response;
+    }
+
     // Helper method to trim and remove extra spaces
     private String cleanInput(String input) {
         return input == null ? null : input.trim().replaceAll("\\s+", " ");
