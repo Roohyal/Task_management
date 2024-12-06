@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class PersonController {
     private final PersonService personService;
 
-    @PutMapping
+    @PutMapping("/update-person")
     public ResponseEntity<?> updatePerson(@RequestParam UpdatePersonRequest updatePersonRequest) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUsername = authentication.getName();
@@ -24,7 +24,7 @@ public class PersonController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
+    @GetMapping("/get-user")
     public ResponseEntity<?> getSignedInUser() throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUsername = authentication.getName();
