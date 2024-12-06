@@ -32,7 +32,7 @@ public class TaskController {
         return ResponseEntity.ok(taskResponse);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public ResponseEntity<?> deleteTask(@RequestParam Long taskId){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUsername = authentication.getName();

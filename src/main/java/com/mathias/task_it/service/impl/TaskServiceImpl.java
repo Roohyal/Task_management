@@ -78,6 +78,7 @@ public class TaskServiceImpl implements TaskService {
         // Use the builder pattern for each Task and collect as TaskListResponse
         return tasks.stream()
                 .map(task -> TaskListResponse.builder()
+                        .id(task.getId())
                         .taskName(task.getTaskName())          // Assuming TaskListResponse has an ID field// Set other relevant fields as needed
                         .taskDescription(task.getTaskDescription())
                         .taskStatus(task.getStatus())

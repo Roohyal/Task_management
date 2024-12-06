@@ -12,6 +12,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class TaskListResponse {
+
+    private Long id;
     private String taskName;
 
     private String taskDescription;
